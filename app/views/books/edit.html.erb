@@ -1,8 +1,19 @@
 <h1>Editing Book</h1>
 
-<form>
-<%= render 'form', book: @book %>
-</form>
+<!-- フォームの書き換え -->
+  <%=form_with model: @book do |f| %>
+
+    <p class="box1"><h4>Title</h4></p>
+    <p class="box2"><%= f.text_field :title %></p>
+
+    <p class="box1"><h4>Body</h4></p>
+    <p class="box2"><%= f.text_area :body %></p>
+
+
+    <p><%= f.submit 'Update Book' %></p>
+
+  <% end %> 
+<!-- ここまで -->
 
 <%= link_to 'Show', @book %> |
 <%= link_to 'Back', books_path %>
